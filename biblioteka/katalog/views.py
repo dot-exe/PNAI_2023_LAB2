@@ -7,9 +7,9 @@ from .models import Autor, Gatunek, Ksiazka, InstacjaKsiazki
 
 def index(request):
     num_ks = Ksiazka.objects.all().count()
-    num_in = InstacjaKsiazki.objects().all().count()
-    num_in_d = InstacjaKsiazki.objects.filter(status_exact='d').count()
-    num_au = Autor.objects().count()
+    num_in = InstacjaKsiazki.objects.all().count()
+    num_in_d = InstacjaKsiazki.objects.filter(status__exact='d').count()
+    num_au = Autor.objects.count()
 
     return render(
         request,
