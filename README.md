@@ -1,4 +1,4 @@
-# PNAI_2023_LAB1
+# PNAI_2023_LAB2
 A simple Python + Django project carried out as a part of the subject "Programowanie Nowoczesnych Aplikacji Internetowych"
 
 ## Visual Studio Code addons
