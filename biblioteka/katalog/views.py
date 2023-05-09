@@ -1,8 +1,7 @@
 from django.shortcuts import render
-
-# Create your views here.
-
 from .models import Autor, Gatunek, Ksiazka, InstacjaKsiazki
+from django.views import generic
+# Create your views here.
 
 
 def index(request):
@@ -21,3 +20,17 @@ def index(request):
             'num_au': num_au
         }
     )
+
+
+class AutorListView(generic.ListView):
+    model = Autor
+    context_object_name = 'autor_list'
+    queryset = Autor.objects.filter(imie__icontains=' ')[:5]
+    template_name = 'katalog/autor_list.html'
+
+
+class KsiazkaListView(generic.ListView):
+    model = Ksiazka
+    context_object_name = 'moja_ksiazka_list'
+    queryset = Ksiazka.objects.filter(tytul__icontains=' ')[:5]
+    template_name = 'katalog/ksiazka_moja_list.html'
