@@ -26,11 +26,17 @@ class AutorListView(generic.ListView):
     model = Autor
     context_object_name = 'autor_list'
     queryset = Autor.objects.filter(imie__icontains=' ')[:5]
-    template_name = 'katalog/autor_list.html'
+    template_name = 'autor_list.html'
 
 
 class KsiazkaListView(generic.ListView):
     model = Ksiazka
     context_object_name = 'moja_ksiazka_list'
-    queryset = Ksiazka.objects.filter(tytul__icontains=' ')[:5]
-    template_name = 'katalog/ksiazka_moja_list.html'
+    queryset = Ksiazka.objects.all()
+    template_name = 'ksiazka_moja_list.html'
+    paginate_by = 3
+
+
+class KsiazkaSzczegolView(generic.DetailView):
+    model = Ksiazka
+    template_name = 'ksiazka_detail.html'
