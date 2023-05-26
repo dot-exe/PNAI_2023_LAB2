@@ -25,7 +25,7 @@ def index(request):
 class AutorListView(generic.ListView):
     model = Autor
     context_object_name = 'autor_list'
-    queryset = Autor.objects.filter(imie__icontains=' ')[:5]
+    queryset = Autor.objects.all()
     template_name = 'autor_list.html'
 
 
