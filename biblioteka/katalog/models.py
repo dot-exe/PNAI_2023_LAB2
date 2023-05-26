@@ -34,7 +34,7 @@ class Ksiazka(models.Model):
         display_gatunek.short_description = 'Gat.'
 
 
-class InstacjaKsiazki(models.Model):
+class InstancjaKsiazki(models.Model):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, help_text="ID tej ksiazki")
     ksiazka = models.ForeignKey(

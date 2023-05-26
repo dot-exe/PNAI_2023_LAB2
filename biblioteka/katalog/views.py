@@ -1,13 +1,13 @@
 from django.shortcuts import render
-from .models import Autor, Gatunek, Ksiazka, InstacjaKsiazki
+from .models import Autor, Gatunek, Ksiazka, InstancjaKsiazki
 from django.views import generic
 # Create your views here.
 
 
 def index(request):
     num_ks = Ksiazka.objects.all().count()
-    num_in = InstacjaKsiazki.objects.all().count()
-    num_in_d = InstacjaKsiazki.objects.filter(status__exact='d').count()
+    num_in = InstancjaKsiazki.objects.all().count()
+    num_in_d = InstancjaKsiazki.objects.filter(status__exact='d').count()
     num_au = Autor.objects.count()
 
     return render(
